@@ -3,6 +3,7 @@ import { Component, ViewChild, Input, Injectable, NgModule } from '@angular/core
 import * as i1 from '@angular/common';
 import { JsonPipe, AsyncPipe, CommonModule } from '@angular/common';
 import { BehaviorSubject } from 'rxjs';
+import * as i1$1 from '@angular/cdk/clipboard';
 import { BrowserModule } from '@angular/platform-browser';
 
 class NgxConsoleComponent {
@@ -55,7 +56,8 @@ class LogLine {
 }
 
 class LoggerService {
-    constructor() {
+    constructor(clipboard) {
+        this.clipboard = clipboard;
         this.logStream = new BehaviorSubject([]);
         this.logStream$ = this.logStream.asObservable();
     }
@@ -81,7 +83,15 @@ class LoggerService {
     clear() {
         this.logStream.next([]);
     }
-    static { this.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "16.2.9", ngImport: i0, type: LoggerService, deps: [], target: i0.ɵɵFactoryTarget.Injectable }); }
+    /**
+     * Copy the content to from the log to a clipboard.
+     * Presently the format we use is 'timestamp - log level - source (this is currently the source of the class) - message'
+     */
+    copyLogs() {
+        const logs = this.logStream.value.map(logLine => `${logLine.timeStamp} - ${logLine.level} -${logLine.source} - ${logLine.line}`).join("\n");
+        this.clipboard.copy(logs);
+    }
+    static { this.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "16.2.9", ngImport: i0, type: LoggerService, deps: [{ token: i1$1.Clipboard }], target: i0.ɵɵFactoryTarget.Injectable }); }
     static { this.ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "16.2.9", ngImport: i0, type: LoggerService, providedIn: 'root' }); }
 }
 i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "16.2.9", ngImport: i0, type: LoggerService, decorators: [{
@@ -89,7 +99,7 @@ i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "16.2.9", ngImpor
             args: [{
                     providedIn: 'root'
                 }]
-        }] });
+        }], ctorParameters: function () { return [{ type: i1$1.Clipboard }]; } });
 
 class NgxHisbLoggerModule {
     static { this.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "16.2.9", ngImport: i0, type: NgxHisbLoggerModule, deps: [], target: i0.ɵɵFactoryTarget.NgModule }); }
