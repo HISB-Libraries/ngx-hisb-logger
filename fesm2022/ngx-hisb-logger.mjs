@@ -22,10 +22,10 @@ class NgxConsoleComponent {
             this.scrollToElement();
         }
     }
-    static { this.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "16.2.9", ngImport: i0, type: NgxConsoleComponent, deps: [], target: i0.ɵɵFactoryTarget.Component }); }
-    static { this.ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "16.2.9", type: NgxConsoleComponent, selector: "ngx-console", inputs: { logs: "logs" }, viewQueries: [{ propertyName: "myScrollContainer", first: true, predicate: ["terminal"], descendants: true }], usesOnChanges: true, ngImport: i0, template: "<div class=\"terminal\" #terminal>\n  <div *ngFor=\"let item of logs\">\n    <div [ngClass]=\"item.level\">{{item.timeStamp | date : 'yyyy-MM-dd hh:mm:ss'}} - {{item.source}} - {{item.level}} - {{item.line}}</div>\n  </div>\n</div>\n", styles: [".terminal{font-family:monospace;height:200px;overflow-y:scroll;background-color:#252525;color:#f5f5f5;padding:8px 8px 32px;border-radius:4px}.ERROR{color:red}.INFO{color:#f5f5f5}.WARN{color:#ffc107}.DEBUG{color:#3f51b5}\n"], dependencies: [{ kind: "directive", type: i1.NgClass, selector: "[ngClass]", inputs: ["class", "ngClass"] }, { kind: "directive", type: i1.NgForOf, selector: "[ngFor][ngForOf]", inputs: ["ngForOf", "ngForTrackBy", "ngForTemplate"] }, { kind: "pipe", type: i1.DatePipe, name: "date" }] }); }
+    static { this.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "17.0.9", ngImport: i0, type: NgxConsoleComponent, deps: [], target: i0.ɵɵFactoryTarget.Component }); }
+    static { this.ɵcmp = i0.ɵɵngDeclareComponent({ minVersion: "14.0.0", version: "17.0.9", type: NgxConsoleComponent, selector: "ngx-console", inputs: { logs: "logs" }, viewQueries: [{ propertyName: "myScrollContainer", first: true, predicate: ["terminal"], descendants: true }], usesOnChanges: true, ngImport: i0, template: "<div class=\"terminal\" #terminal>\n  <div *ngFor=\"let item of logs\">\n    <div [ngClass]=\"item.level\">{{item.timeStamp | date : 'yyyy-MM-dd hh:mm:ss'}} - {{item.source}} - {{item.level}} - {{item.line}}</div>\n  </div>\n</div>\n", styles: [".terminal{font-family:monospace;height:200px;overflow-y:scroll;background-color:#252525;color:#f5f5f5;padding:8px 8px 32px;border-radius:4px}.ERROR{color:red}.INFO{color:#f5f5f5}.WARN{color:#ffc107}.DEBUG{color:#3f51b5}\n"], dependencies: [{ kind: "directive", type: i1.NgClass, selector: "[ngClass]", inputs: ["class", "ngClass"] }, { kind: "directive", type: i1.NgForOf, selector: "[ngFor][ngForOf]", inputs: ["ngForOf", "ngForTrackBy", "ngForTemplate"] }, { kind: "pipe", type: i1.DatePipe, name: "date" }] }); }
 }
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "16.2.9", ngImport: i0, type: NgxConsoleComponent, decorators: [{
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "17.0.9", ngImport: i0, type: NgxConsoleComponent, decorators: [{
             type: Component,
             args: [{ selector: 'ngx-console', template: "<div class=\"terminal\" #terminal>\n  <div *ngFor=\"let item of logs\">\n    <div [ngClass]=\"item.level\">{{item.timeStamp | date : 'yyyy-MM-dd hh:mm:ss'}} - {{item.source}} - {{item.level}} - {{item.line}}</div>\n  </div>\n</div>\n", styles: [".terminal{font-family:monospace;height:200px;overflow-y:scroll;background-color:#252525;color:#f5f5f5;padding:8px 8px 32px;border-radius:4px}.ERROR{color:red}.INFO{color:#f5f5f5}.WARN{color:#ffc107}.DEBUG{color:#3f51b5}\n"] }]
         }], propDecorators: { myScrollContainer: [{
@@ -91,28 +91,28 @@ class LoggerService {
         const logs = this.logStream.value.map(logLine => `${logLine.timeStamp} - ${logLine.level} -${logLine.source} - ${logLine.line}`).join("\n");
         this.clipboard.copy(logs);
     }
-    static { this.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "16.2.9", ngImport: i0, type: LoggerService, deps: [{ token: i1$1.Clipboard }], target: i0.ɵɵFactoryTarget.Injectable }); }
-    static { this.ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "16.2.9", ngImport: i0, type: LoggerService, providedIn: 'root' }); }
+    static { this.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "17.0.9", ngImport: i0, type: LoggerService, deps: [{ token: i1$1.Clipboard }], target: i0.ɵɵFactoryTarget.Injectable }); }
+    static { this.ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "17.0.9", ngImport: i0, type: LoggerService, providedIn: 'root' }); }
 }
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "16.2.9", ngImport: i0, type: LoggerService, decorators: [{
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "17.0.9", ngImport: i0, type: LoggerService, decorators: [{
             type: Injectable,
             args: [{
                     providedIn: 'root'
                 }]
-        }], ctorParameters: function () { return [{ type: i1$1.Clipboard }]; } });
+        }], ctorParameters: () => [{ type: i1$1.Clipboard }] });
 
 class NgxHisbLoggerModule {
-    static { this.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "16.2.9", ngImport: i0, type: NgxHisbLoggerModule, deps: [], target: i0.ɵɵFactoryTarget.NgModule }); }
-    static { this.ɵmod = i0.ɵɵngDeclareNgModule({ minVersion: "14.0.0", version: "16.2.9", ngImport: i0, type: NgxHisbLoggerModule, declarations: [NgxConsoleComponent], imports: [JsonPipe,
+    static { this.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "17.0.9", ngImport: i0, type: NgxHisbLoggerModule, deps: [], target: i0.ɵɵFactoryTarget.NgModule }); }
+    static { this.ɵmod = i0.ɵɵngDeclareNgModule({ minVersion: "14.0.0", version: "17.0.9", ngImport: i0, type: NgxHisbLoggerModule, declarations: [NgxConsoleComponent], imports: [JsonPipe,
             AsyncPipe,
             CommonModule,
             BrowserModule], exports: [NgxConsoleComponent] }); }
-    static { this.ɵinj = i0.ɵɵngDeclareInjector({ minVersion: "12.0.0", version: "16.2.9", ngImport: i0, type: NgxHisbLoggerModule, providers: [
+    static { this.ɵinj = i0.ɵɵngDeclareInjector({ minVersion: "12.0.0", version: "17.0.9", ngImport: i0, type: NgxHisbLoggerModule, providers: [
             LoggerService
         ], imports: [CommonModule,
             BrowserModule] }); }
 }
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "16.2.9", ngImport: i0, type: NgxHisbLoggerModule, decorators: [{
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "17.0.9", ngImport: i0, type: NgxHisbLoggerModule, decorators: [{
             type: NgModule,
             args: [{
                     declarations: [
