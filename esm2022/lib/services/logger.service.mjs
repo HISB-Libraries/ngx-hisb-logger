@@ -40,10 +40,10 @@ export class LoggerService {
         const logs = this.logStream.value.map(logLine => `${logLine.timeStamp} - ${logLine.level} -${logLine.source} - ${logLine.line}`).join("\n");
         this.clipboard.copy(logs);
     }
-    static { this.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "17.0.9", ngImport: i0, type: LoggerService, deps: [{ token: i1.Clipboard }], target: i0.ɵɵFactoryTarget.Injectable }); }
-    static { this.ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "17.0.9", ngImport: i0, type: LoggerService, providedIn: 'root' }); }
+    static { this.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "18.0.0", ngImport: i0, type: LoggerService, deps: [{ token: i1.Clipboard }], target: i0.ɵɵFactoryTarget.Injectable }); }
+    static { this.ɵprov = i0.ɵɵngDeclareInjectable({ minVersion: "12.0.0", version: "18.0.0", ngImport: i0, type: LoggerService, providedIn: 'root' }); }
 }
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "17.0.9", ngImport: i0, type: LoggerService, decorators: [{
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "18.0.0", ngImport: i0, type: LoggerService, decorators: [{
             type: Injectable,
             args: [{
                     providedIn: 'root'

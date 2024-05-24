@@ -5,17 +5,17 @@ import { LoggerService } from "./services/logger.service";
 import { BrowserModule } from "@angular/platform-browser";
 import * as i0 from "@angular/core";
 export class NgxHisbLoggerModule {
-    static { this.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "17.0.9", ngImport: i0, type: NgxHisbLoggerModule, deps: [], target: i0.ɵɵFactoryTarget.NgModule }); }
-    static { this.ɵmod = i0.ɵɵngDeclareNgModule({ minVersion: "14.0.0", version: "17.0.9", ngImport: i0, type: NgxHisbLoggerModule, declarations: [NgxConsoleComponent], imports: [JsonPipe,
+    static { this.ɵfac = i0.ɵɵngDeclareFactory({ minVersion: "12.0.0", version: "18.0.0", ngImport: i0, type: NgxHisbLoggerModule, deps: [], target: i0.ɵɵFactoryTarget.NgModule }); }
+    static { this.ɵmod = i0.ɵɵngDeclareNgModule({ minVersion: "14.0.0", version: "18.0.0", ngImport: i0, type: NgxHisbLoggerModule, declarations: [NgxConsoleComponent], imports: [JsonPipe,
             AsyncPipe,
             CommonModule,
             BrowserModule], exports: [NgxConsoleComponent] }); }
-    static { this.ɵinj = i0.ɵɵngDeclareInjector({ minVersion: "12.0.0", version: "17.0.9", ngImport: i0, type: NgxHisbLoggerModule, providers: [
+    static { this.ɵinj = i0.ɵɵngDeclareInjector({ minVersion: "12.0.0", version: "18.0.0", ngImport: i0, type: NgxHisbLoggerModule, providers: [
             LoggerService
         ], imports: [CommonModule,
             BrowserModule] }); }
 }
-i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "17.0.9", ngImport: i0, type: NgxHisbLoggerModule, decorators: [{
+i0.ɵɵngDeclareClassMetadata({ minVersion: "12.0.0", version: "18.0.0", ngImport: i0, type: NgxHisbLoggerModule, decorators: [{
             type: NgModule,
             args: [{
                     declarations: [
